@@ -203,7 +203,17 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+// Manus plugins support the managed development environment. A standalone Vercel deployment
+// must emit only the portfolio client bundle, without injected Manus runtime or debug scripts.
+const isVercelBuild = process.env.VERCEL === "1";
+const plugins = [
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  ...(isVercelBuild
+    ? []
+    : [vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()]),
+];
 
 export default defineConfig({
   plugins,

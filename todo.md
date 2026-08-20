@@ -5,4 +5,5 @@
 - [ ] Inspect the live Vercel deployment and identify the configuration or build mismatch.
 - [x] Inspect the live Vercel deployment and identify the configuration or build mismatch.
 - [ ] Add the Vercel-compatible deployment configuration to the portfolio repository.
+- [x] Add the Vercel-compatible deployment configuration to the portfolio repository.
 - [ ] Push the repair and confirm the live site serves the rebuilt portfolio.
