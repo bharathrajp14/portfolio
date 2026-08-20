@@ -1,0 +1,4 @@
+- [ ] Inspect the selected GitHub repository’s current branch and working state.
+- [ ] Replace the legacy static portfolio with the rebuilt React portfolio source and supporting analysis.
+- [ ] Commit and push the update to the selected GitHub repository.
+- [ ] Verify the remote commit and report the published revision.
