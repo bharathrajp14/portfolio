@@ -24,6 +24,10 @@ pnpm run check
 pnpm run build
 ```
 
+## Vercel deployment
+
+The repository includes `vercel.json`, which builds the Vite client only and deploys `dist/public` as the static output. This prevents Vercel from treating the bundled Express compatibility server as the website entry point. The configuration also applies an SPA fallback so portfolio URLs continue to resolve to the React application.
+
 ## Technology
 
 The codebase uses React 19, TypeScript, Vite, Tailwind CSS, and Lucide icons. Visual assets are hosted through the associated portfolio project and are referenced from the application as persistent asset paths.

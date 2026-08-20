@@ -2,3 +2,7 @@
 - [ ] Replace the legacy static portfolio with the rebuilt React portfolio source and supporting analysis.
 - [ ] Commit and push the update to the selected GitHub repository.
 - [ ] Verify the remote commit and report the published revision.
+- [ ] Inspect the live Vercel deployment and identify the configuration or build mismatch.
+- [x] Inspect the live Vercel deployment and identify the configuration or build mismatch.
+- [ ] Add the Vercel-compatible deployment configuration to the portfolio repository.
+- [ ] Push the repair and confirm the live site serves the rebuilt portfolio.
