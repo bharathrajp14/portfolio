@@ -21,7 +21,7 @@ const assetPath = (managedUrl: string, portableFilename: string) =>
 const heroArtwork = assetPath("/manus-storage/field-notes-hero_4439a67e.png", "field-notes-hero.png");
 const projectTexture = assetPath("/manus-storage/field-notes-project-texture_c5a0a177.png", "field-notes-project-texture.png");
 const monogram = assetPath("/manus-storage/brp-monogram_7a8e909d.png", "brp-monogram.png");
-const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_85a70abe.docx", "Bharath_Raj_P_Resume.docx");
+const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_98478a79.docx", "Bharath_Raj_P_Resume.docx");
 
 const featuredProjects = [
   {
