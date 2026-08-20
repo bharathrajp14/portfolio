@@ -193,6 +193,9 @@ export default function Home() {
                 <p>Systems are useful when their decisions leave a trace.</p>
                 <div><b>OBSERVE</b><b>BUILD</b><b>VERIFY</b></div>
               </div>
+              <div className="hero-trace" aria-label="System workflow trace">
+                <span>BRP / SYSTEM TRACE</span><strong>INPUT</strong><i>→</i><strong>DECISION</strong><i>→</i><strong>VERIFIED ACTION</strong>
+              </div>
               <div className="hero-caption"><span>FIG. 01</span> Systems, interfaces, and proof.</div>
             </div>
           </section>
@@ -203,7 +206,7 @@ export default function Home() {
           </section>
 
           <section id="work" className="section-block work-section">
-            <div className="section-marker"><span>01</span><div><p>SELECTED BUILDS</p><p className="marker-note">Projects with a point of view</p></div></div>
+            <div className="section-marker"><span>01</span><div><p>SELECTED BUILDS</p><p className="marker-note">Projects with a point of view</p><span className="section-stamp">BRP / INSPECT → VERIFY</span></div></div>
             <div className="section-content">
               <div className="section-intro-row">
                 <div><h2>Work that shows how I think.</h2><p>These are the projects worth opening in a new tab: ambitious enough to expose trade-offs, concrete enough to inspect in code.</p></div>
@@ -252,7 +255,7 @@ export default function Home() {
           </section>
 
           <section id="contact" className="contact-section">
-            <div className="contact-index">04 / NEXT NOTE<br /><span className="contact-stamp">OPEN / COLLABORATE</span></div>
+            <div className="contact-index">04 / NEXT NOTE<br /><span className="contact-stamp">BRP / OPEN → COLLABORATE</span></div>
             <div><h2>Have a hard problem worth mapping?</h2><p>Tell me what you’re building, where the uncertainty lives, and what a useful first milestone looks like.</p><a className="button-primary" href="mailto:bharathraj14120@gmail.com">Email Bharath <Mail size={16} /></a></div>
             <div className="contact-links"><a href="mailto:bharathraj14120@gmail.com"><Mail size={15} /> bharathraj14120@gmail.com</a><a href="https://www.linkedin.com/in/bharathrajp14" target="_blank" rel="noreferrer"><Linkedin size={15} /> linkedin.com/in/bharathrajp14</a><a href="https://github.com/bharathrajp14" target="_blank" rel="noreferrer"><Github size={15} /> github.com/bharathrajp14</a></div>
           </section>
