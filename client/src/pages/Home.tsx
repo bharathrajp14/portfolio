@@ -21,7 +21,7 @@ const assetPath = (managedUrl: string, portableFilename: string) =>
 const heroArtwork = assetPath("/manus-storage/field-notes-hero_4439a67e.png", "field-notes-hero.png");
 const projectTexture = assetPath("/manus-storage/field-notes-project-texture_c5a0a177.png", "field-notes-project-texture.png");
 const monogram = assetPath("/manus-storage/brp-monogram_7a8e909d.png", "brp-monogram.png");
-const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_Resume_44a84903.docx", "Bharath_Raj_P_Resume.docx");
+const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_Updated_Resume_a897939e.docx", "Bharath_Raj_P_Resume.docx");
 
 const featuredProjects = [
   {
@@ -94,16 +94,15 @@ const projectArchive = [
   ["flask-url-shortener", "URL shortener", "Flask / Python"],
   ["studentreport_mern", "Student report app", "JavaScript / MERN"],
   ["portfolio", "Original portfolio site", "HTML / CSS / JavaScript"],
-  ["payloadss", "Payload experiments", "Repository archive"],
 ];
 
 const skillGroups = [
-  ["Build", "Python · JavaScript · TypeScript · SQL"],
-  ["Backend", "FastAPI · Node.js · Express · REST · async services"],
-  ["Data", "PostgreSQL · MongoDB · SQLite · SQLAlchemy · Supabase"],
-  ["AI + systems", "LLM integration · agents · model routing · memory · automation"],
-  ["Security", "JWT · OAuth · validation · rate limiting · API security · Git"],
-  ["Interface", "React · Tailwind CSS · Flutter · responsive product UI"],
+  ["Languages", "Python · JavaScript · C · Java · SQL"],
+  ["Frontend", "React · HTML · CSS3"],
+  ["Backend", "REST APIs · Express.js · Node.js"],
+  ["Database", "MongoDB · DBMS"],
+  ["Tools + platforms", "Git · GitHub · Postman · VS Code · Claude · Linux/Unix"],
+  ["Professional practice", "Problem solving · quick learning · team collaboration · responsible AI tool usage"],
 ];
 
 export default function Home() {
