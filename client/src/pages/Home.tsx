@@ -14,9 +14,14 @@ import {
   X,
 } from "lucide-react";
 
-const heroArtwork = "/manus-storage/field-notes-hero_4439a67e.png";
-const projectTexture = "/manus-storage/field-notes-project-texture_c5a0a177.png";
-const monogram = "/manus-storage/brp-monogram_7a8e909d.png";
+const portableAssetBase = import.meta.env.VITE_STATIC_ASSET_BASE?.replace(/\/$/, "");
+const assetPath = (managedUrl: string, portableFilename: string) =>
+  portableAssetBase ? `${portableAssetBase}/${portableFilename}` : managedUrl;
+
+const heroArtwork = assetPath("/manus-storage/field-notes-hero_4439a67e.png", "field-notes-hero.png");
+const projectTexture = assetPath("/manus-storage/field-notes-project-texture_c5a0a177.png", "field-notes-project-texture.png");
+const monogram = assetPath("/manus-storage/brp-monogram_7a8e909d.png", "brp-monogram.png");
+const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_Resume_44a84903.docx", "Bharath_Raj_P_Resume.docx");
 
 const featuredProjects = [
   {
@@ -159,7 +164,7 @@ export default function Home() {
               <p className="hero-lede">I’m Bharath Raj P — a software engineering student and development intern working across backend systems, full-stack products, AI runtimes, and secure automation.</p>
               <div className="hero-actions">
                 <button className="button-primary" onClick={() => scrollTo("work")}>Inspect selected work <ArrowUpRight size={16} /></button>
-                <a className="button-text" href="/manus-storage/Bharath_Raj_P_Resume_44a84903.docx" download><Download size={15} /> Download résumé</a>
+                <a className="button-text" href={resumeUrl} download><Download size={15} /> Download résumé</a>
               </div>
               <div className="hero-meta">
                 <span><MapPin size={14} /> Tamil Nadu, India</span>

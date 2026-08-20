@@ -26,7 +26,7 @@ pnpm run build
 
 ## Vercel deployment
 
-The repository includes `vercel.json`, which builds the Vite client only and deploys `dist/public` as the static output. This prevents Vercel from treating the bundled Express compatibility server as the website entry point. The configuration also applies an SPA fallback so portfolio URLs continue to resolve to the React application.
+The repository includes `vercel.json`, which builds the Vite client only and deploys `dist/public` as the static output. This prevents Vercel from treating the bundled Express compatibility server as the website entry point. The configuration also applies an SPA fallback so portfolio URLs continue to resolve to the React application. Portable copies of the hero artwork, project texture, monogram, and résumé are stored in `client/public/portfolio-assets` for Vercel, while the managed project preview continues to use its persistent asset paths.
 
 ## Technology
 

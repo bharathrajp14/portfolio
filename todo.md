@@ -7,3 +7,4 @@
 - [ ] Add the Vercel-compatible deployment configuration to the portfolio repository.
 - [x] Add the Vercel-compatible deployment configuration to the portfolio repository.
 - [ ] Push the repair and confirm the live site serves the rebuilt portfolio.
+- [x] Push the repair and confirm the live site serves the rebuilt portfolio.
