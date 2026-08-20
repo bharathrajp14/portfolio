@@ -37,6 +37,7 @@ const featuredProjects = [
     href: "https://github.com/bharathrajp14/BrJarvis",
     texture: true,
     evidence: ["TASK DAG", "VERIFY", "PASS"],
+    artifact: "TRACE / FALLBACK RECOVERED",
   },
   {
     number: "02",
@@ -49,7 +50,8 @@ const featuredProjects = [
     stack: ["React", "TypeScript", "FastAPI", "PostgreSQL", "SQLAlchemy"],
     href: "https://github.com/bharathrajp14/nexora",
     texture: false,
-    evidence: ["OTP", "ROTATE", "AUDIT"],
+    evidence: ["IMPORT / 1K", "OTP / ROTATE", "ACTIVITY / LOGGED"],
+    artifact: "SCHEMA PREVIEW / IMPORT READY",
   },
   {
     number: "03",
@@ -62,7 +64,8 @@ const featuredProjects = [
     stack: ["Flutter", "FastAPI", "Supabase", "Firebase", "SQLAlchemy"],
     href: "https://github.com/bharathrajp14/farmaa",
     texture: true,
-    evidence: ["ROLE", "MARKET", "SYNC"],
+    evidence: ["OTP / 05:00", "RATE / IP", "JWT / ISSUED"],
+    artifact: "FARMER ↔ BUYER / VERIFIED",
   },
   {
     number: "04",
@@ -75,7 +78,8 @@ const featuredProjects = [
     stack: ["React", "Vite", "Supabase", "NVIDIA NIM", "Adzuna API"],
     href: "https://github.com/bharathrajp14/job_manager",
     texture: false,
-    evidence: ["SEARCH", "FUNNEL", "AI"],
+    evidence: ["XLSX / SYNC", "FUNNEL / STAGE", "AI / REQUEST"],
+    artifact: "APPLICATION FLOW / INSPECTED",
   },
 ];
 
@@ -134,6 +138,7 @@ export default function Home() {
         <button className="monogram-button" onClick={() => scrollTo("top")} aria-label="Back to top">
           <img src={monogram} alt="BRP monogram" />
         </button>
+        <div className="rail-brand"><strong>BRP</strong><span>FIELD<br />NOTES</span></div>
         <nav className="rail-nav" aria-label="Field Notes index">
           <button onClick={() => scrollTo("work")}><span>01</span> Work</button>
           <button onClick={() => scrollTo("about")}><span>02</span> About</button>
@@ -208,7 +213,7 @@ export default function Home() {
               </div>
               <div className="project-list">
                 {filteredProjects.map((project) => (
-                  <article className="project-card" key={project.title}>
+                  <article className={`project-card ${Number(project.number) % 2 === 0 ? "is-alternate" : ""}`} key={project.title}>
                     <div className="project-number">{project.number}</div>
                     <div className="project-main">
                       <div className="project-heading"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3></div><a href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`}><Github size={18} /></a></div>
@@ -221,6 +226,7 @@ export default function Home() {
                     </div>
                     <div className={project.texture ? "project-visual texture" : "project-visual"} style={project.texture ? { backgroundImage: `url(${projectTexture})` } : undefined}>
                       <span className="visual-label">PROOF SHEET / {project.number}</span>
+                      <div className="artifact-note"><span>OBSERVED</span><strong>{project.artifact}</strong></div>
                       <div className="evidence-lines">{project.evidence.map((item) => <span key={item}>{item}</span>)}</div>
                       <ArrowUpRight size={24} />
                     </div>
