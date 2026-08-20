@@ -1,4 +1,6 @@
 /* Field Notes design: the public site is a single long-form editorial portfolio with direct section anchors. */
+// Field Notes editorial system: analytics stays invisible to preserve the paper-and-proof interface while safely tracking production page views.
+import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -24,6 +26,7 @@ export default function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <Analytics mode={import.meta.env.PROD ? "production" : "development"} />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
