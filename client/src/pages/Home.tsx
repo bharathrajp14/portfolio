@@ -1,4 +1,5 @@
 /* Field Notes design: editorial brutalism, warm paper, mineral green structure, evidence-led project storytelling. */
+// Field Notes editorial style: restrained ink and green tones, asymmetric documentation-inspired layout, and legible utility-first interactions.
 import { useMemo, useState } from "react";
 import {
   ArrowUpRight,
@@ -21,13 +22,14 @@ const assetPath = (managedUrl: string, portableFilename: string) =>
 const heroArtwork = assetPath("/manus-storage/field-notes-hero_4439a67e.png", "field-notes-hero.png");
 const projectTexture = assetPath("/manus-storage/field-notes-project-texture_c5a0a177.png", "field-notes-project-texture.png");
 const monogram = assetPath("/manus-storage/brp-monogram_7a8e909d.png", "brp-monogram.png");
-const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_98478a79.docx", "Bharath_Raj_P_Resume.docx");
+const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_a867076d.docx", "Bharath_Raj_P_Resume.docx");
 
 const featuredProjects = [
   {
     number: "01",
     title: "BR JARVIS",
     type: "Autonomous AI operating runtime",
+    brief: "Make autonomous actions observable, recoverable, and verifiable.",
     summary:
       "A local-first runtime for verifiable task execution across CLI, web, voice, and system automation. The differentiator is not only orchestration—it is proving that the action really happened.",
     proof: "325+ passing tests · Windows / Linux / macOS",
@@ -40,6 +42,7 @@ const featuredProjects = [
     number: "02",
     title: "NEXORA",
     type: "Digital workspace platform",
+    brief: "Turn secure data operations into a comprehensible daily workspace.",
     summary:
       "A full-stack workspace with enterprise-style authentication, custom collections, imports, auditability, and workflow building. Built to make secure data operations feel understandable.",
     proof: "OTP + OAuth · refresh-token rotation · async services",
@@ -52,6 +55,7 @@ const featuredProjects = [
     number: "03",
     title: "Farmaa",
     type: "Agriculture marketplace + mobile app",
+    brief: "Give farmers and buyers a safer shared market workflow.",
     summary:
       "A mobile and backend platform connecting farmers and buyers with marketplace workflows, market prices, role-aware access, and an AI advisor for agricultural decisions.",
     proof: "OTP + Google auth · role-based access · market trends",
@@ -64,6 +68,7 @@ const featuredProjects = [
     number: "04",
     title: "JobBoard Pro",
     type: "AI-assisted career operations",
+    brief: "Turn a scattered job search into an inspectable operating system.",
     summary:
       "A privacy-first job application tracker that combines live listings, Gmail scanning, Kanban tracking, funnel analytics, interview prep, and tailored cover letters.",
     proof: "Adzuna search · Supabase · DeepSeek-R1 workflows",
@@ -129,8 +134,14 @@ export default function Home() {
         <button className="monogram-button" onClick={() => scrollTo("top")} aria-label="Back to top">
           <img src={monogram} alt="BRP monogram" />
         </button>
-        <div className="rail-line" />
+        <nav className="rail-nav" aria-label="Field Notes index">
+          <button onClick={() => scrollTo("work")}><span>01</span> Work</button>
+          <button onClick={() => scrollTo("about")}><span>02</span> About</button>
+          <button onClick={() => scrollTo("skills")}><span>03</span> Stack</button>
+          <button onClick={() => scrollTo("contact")}><span>04</span> Contact</button>
+        </nav>
         <div className="rail-copy">BHARATH RAJ P · SOFTWARE ENGINEER</div>
+        <div className="rail-line" />
         <div className="rail-bottom">
           <span className="status-dot" />
           Open to thoughtful engineering work
@@ -142,7 +153,7 @@ export default function Home() {
           <button className="mobile-mark" onClick={() => scrollTo("top")} aria-label="Back to top">
             <img src={monogram} alt="BRP monogram" />
           </button>
-          <div className="topbar-identity"><strong>BHARATH RAJ P</strong><span>Software Engineer</span></div><div className="topbar-note">FIELD NOTES / 2026 EDITION</div>
+          <div className="topbar-identity"><strong>BHARATH RAJ P</strong><span>Software Engineer</span></div><div className="topbar-note">FIELD NOTES / BUILD LOG 2026</div>
           <nav className={mobileOpen ? "topnav open" : "topnav"} aria-label="Primary navigation">
             <button onClick={() => scrollTo("work")}>Work</button>
             <button onClick={() => scrollTo("about")}>About</button>
@@ -172,6 +183,11 @@ export default function Home() {
             </div>
             <div className="hero-art-wrap">
               <img className="hero-art" src={heroArtwork} alt="Editorial field notes and technical system diagrams" />
+              <div className="hero-proof-sheet" aria-label="Portfolio evidence note">
+                <span>BUILD NOTE / 01</span>
+                <p>Systems are useful when their decisions leave a trace.</p>
+                <div><b>OBSERVE</b><b>BUILD</b><b>VERIFY</b></div>
+              </div>
               <div className="hero-caption"><span>FIG. 01</span> Systems, interfaces, and proof.</div>
             </div>
           </section>
@@ -196,12 +212,15 @@ export default function Home() {
                     <div className="project-number">{project.number}</div>
                     <div className="project-main">
                       <div className="project-heading"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3></div><a href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`}><Github size={18} /></a></div>
-                      <p className="project-summary">{project.summary}</p>
-                      <div className="project-proof"><Check size={14} /> {project.proof}</div>
+                      <div className="project-ledger">
+                        <div><span>Brief</span><p>{project.brief}</p></div>
+                        <div><span>Build</span><p>{project.summary}</p></div>
+                        <div className="project-proof"><span>Proof</span><p><Check size={14} /> {project.proof}</p></div>
+                      </div>
                       <div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div>
                     </div>
                     <div className={project.texture ? "project-visual texture" : "project-visual"} style={project.texture ? { backgroundImage: `url(${projectTexture})` } : undefined}>
-                      <span className="visual-label">EVIDENCE / {project.number}</span>
+                      <span className="visual-label">PROOF SHEET / {project.number}</span>
                       <div className="evidence-lines">{project.evidence.map((item) => <span key={item}>{item}</span>)}</div>
                       <ArrowUpRight size={24} />
                     </div>
