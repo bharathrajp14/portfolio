@@ -22,7 +22,7 @@ const assetPath = (managedUrl: string, portableFilename: string) =>
 const heroArtwork = assetPath("/manus-storage/field-notes-hero_4439a67e.png", "field-notes-hero.png");
 const projectTexture = assetPath("/manus-storage/field-notes-project-texture_c5a0a177.png", "field-notes-project-texture.png");
 const monogram = assetPath("/manus-storage/brp-monogram_7a8e909d.png", "brp-monogram.png");
-const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_9d800604.docx", "Bharath_Raj_P_Resume.docx");
+const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_245b5dd8.docx", "Bharath_Raj_P_Resume.docx");
 
 const featuredProjects = [
   {
@@ -245,7 +245,7 @@ export default function Home() {
             <div className="section-marker"><span>02</span><div><p>ABOUT THE BUILDER</p><p className="marker-note">Context behind the code</p><span className="section-stamp">BRP / OBSERVE → BUILD</span></div></div>
             <div className="section-content about-grid">
               <div><h2>A backend-minded builder with a systems habit.</h2><p>I’m currently a Software Development Intern at Kevell Corp, building React modules and integrating REST APIs across authentication, vendor management, notifications, payments, and wallet workflows.</p><p>Before that, I worked through web security fundamentals in a controlled lab environment. That combination—shipping product surfaces while thinking about failure modes—shapes the way I approach every build.</p><a className="inline-link" href="mailto:bharathraj14120@gmail.com">Start a conversation <ArrowUpRight size={15} /></a></div>
-              <div className="timeline"><div className="timeline-item"><span>NOW</span><div><strong>Software Development Intern</strong><p>Kevell Corp · React, REST APIs, collaborative delivery</p></div></div><div className="timeline-item"><span>2024</span><div><strong>Cybersecurity Intern</strong><p>NullClass · web vulnerabilities + introductory pentesting</p></div></div><div className="timeline-item"><span>EDU</span><div><strong>B.E. Computer Science & Engineering</strong><p>PSNA College of Engineering and Technology · CGPA 7.0/10</p></div></div></div>
+              <div className="timeline"><div className="timeline-item"><span>NOW</span><div><strong>Software Development Intern</strong><p>Kevell Corp · React, REST APIs, collaborative delivery</p></div></div><div className="timeline-item"><span>2024</span><div><strong>Cybersecurity Intern</strong><p>NullClass · web vulnerabilities + introductory pentesting</p></div></div><div className="timeline-item"><span>EDU</span><div><strong>B.E. Computer Science & Engineering</strong><p>PSNA College of Engineering and Technology · Completed 6 June 2026 · CGPA 6.86/10</p></div></div></div>
             </div>
           </section>
 
