@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import {
   ArrowUpRight,
+  BookOpen,
   Check,
   ChevronDown,
   Download,
@@ -23,6 +24,7 @@ const heroArtwork = assetPath("/manus-storage/field-notes-hero_4439a67e.png", "f
 const projectTexture = assetPath("/manus-storage/field-notes-project-texture_c5a0a177.png", "field-notes-project-texture.png");
 const monogram = assetPath("/manus-storage/brp-monogram_7a8e909d.png", "brp-monogram.png");
 const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_8763468d.docx", "Bharath_Raj_P_Resume.docx");
+const guideUrl = assetPath("/manus-storage/Bharath_Raj_P_Software_Skills_and_Projects_Guide_521fc6d2.pdf", "Bharath_Raj_P_Software_Skills_and_Projects_Guide.pdf");
 
 const featuredProjects = [
   {
@@ -38,6 +40,7 @@ const featuredProjects = [
     texture: true,
     evidence: ["TASK DAG", "VERIFY", "PASS"],
     artifact: "TRACE / FALLBACK RECOVERED",
+    signal: "ROUTE / CAPABILITY FILTER",
   },
   {
     number: "02",
@@ -52,6 +55,7 @@ const featuredProjects = [
     texture: false,
     evidence: ["IMPORT / 1K", "OTP / ROTATE", "ACTIVITY / LOGGED"],
     artifact: "SCHEMA PREVIEW / IMPORT READY",
+    signal: "CSV → SCHEMA → BATCH",
   },
   {
     number: "03",
@@ -66,6 +70,7 @@ const featuredProjects = [
     texture: true,
     evidence: ["OTP / 05:00", "RATE / IP", "JWT / ISSUED"],
     artifact: "FARMER ↔ BUYER / VERIFIED",
+    signal: "OTP / ROLE / TOKEN",
   },
   {
     number: "04",
@@ -80,6 +85,7 @@ const featuredProjects = [
     texture: false,
     evidence: ["XLSX / SYNC", "FUNNEL / STAGE", "AI / REQUEST"],
     artifact: "APPLICATION FLOW / INSPECTED",
+    signal: "PIPELINE / FUNNEL / AI",
   },
 ];
 
@@ -219,7 +225,7 @@ export default function Home() {
                   <article className={`project-card ${Number(project.number) % 2 === 0 ? "is-alternate" : ""}`} key={project.title}>
                     <div className="project-number">{project.number}</div>
                     <div className="project-main">
-                      <div className="project-heading"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3></div><a href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`}><Github size={18} /></a></div>
+                      <div className="project-heading"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3><span className="project-stamp">BRP / FIELD NOTE {project.number}</span></div><a href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`}><Github size={18} /></a></div>
                       <div className="project-ledger">
                         <div><span>Brief</span><p>{project.brief}</p></div>
                         <div><span>Build</span><p>{project.summary}</p></div>
@@ -227,8 +233,9 @@ export default function Home() {
                       </div>
                       <div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div>
                     </div>
-                    <div className={project.texture ? "project-visual texture" : "project-visual"} style={project.texture ? { backgroundImage: `url(${projectTexture})` } : undefined}>
-                      <span className="visual-label">PROOF SHEET / {project.number}</span>
+                      <div className={project.texture ? "project-visual texture" : "project-visual"} style={project.texture ? { backgroundImage: `url(${projectTexture})` } : undefined}>
+                        <span className="visual-label">PROOF SHEET / {project.number}</span>
+                        <span className="visual-signal">{project.signal}</span>
                       <div className="artifact-note"><span>OBSERVED</span><strong>{project.artifact}</strong></div>
                       <div className="evidence-lines">{project.evidence.map((item) => <span key={item}>{item}</span>)}</div>
                       <ArrowUpRight size={24} />
@@ -251,7 +258,7 @@ export default function Home() {
 
           <section id="skills" className="section-block skills-section">
             <div className="section-marker"><span>03</span><div><p>TOOLS + PRACTICE</p><p className="marker-note">The working vocabulary</p><span className="section-stamp">INDEX / 06 CAPABILITIES</span></div></div>
-            <div className="section-content"><div className="skills-intro"><h2>A stack chosen for control.</h2><p>I reach for tools that make behavior explicit: typed boundaries, inspectable state, resilient APIs, and interfaces that stay close to the user’s real workflow.</p></div><div className="skills-grid">{skillGroups.map(([name, skills]) => <div className="skill-item" key={name}><span>{name}</span><p>{skills}</p></div>)}</div></div>
+              <div className="section-content"><div className="skills-intro"><h2>A stack chosen for control.</h2><p>I reach for tools that make behavior explicit: typed boundaries, inspectable state, resilient APIs, and interfaces that stay close to the user’s real workflow.</p></div><div className="skills-grid">{skillGroups.map(([name, skills]) => <div className="skill-item" key={name}><span>{name}</span><p>{skills}</p></div>)}</div><aside className="learning-guide" aria-label="Downloadable skills and projects guide"><div><span>FIELD GUIDE / 12 CHAPTERS</span><h3>Reset the basics. Rebuild with evidence.</h3><p>A beginner-friendly PDF with plain-language explanations, code examples, visual workflows, project walkthroughs, a glossary, and a 12-week rebuild plan.</p></div><a className="button-primary" href={guideUrl} download><BookOpen size={16} /> Download skill guide</a></aside></div>
           </section>
 
           <section id="contact" className="contact-section">
@@ -261,7 +268,7 @@ export default function Home() {
           </section>
         </main>
 
-        <footer className="footer"><span>© 2026 Bharath Raj P</span><span>Built with care, documented in public.</span><button onClick={() => scrollTo("top")}>Back to top ↑</button></footer>
+        <footer className="footer"><span className="footer-stamp">BRP / FIELD NOTES</span><span>© 2026 Bharath Raj P · Built with care, documented in public.</span><button onClick={() => scrollTo("top")}>Back to top ↑</button></footer>
       </div>
     </div>
   );
