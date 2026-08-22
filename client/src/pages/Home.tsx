@@ -24,7 +24,7 @@ const heroArtwork = assetPath("/manus-storage/field-notes-hero_4439a67e.png", "f
 const projectTexture = assetPath("/manus-storage/field-notes-project-texture_c5a0a177.png", "field-notes-project-texture.png");
 const monogram = assetPath("/manus-storage/brp-monogram_7a8e909d.png", "brp-monogram.png");
 const resumeUrl = assetPath("/manus-storage/Bharath_Raj_P_ATS_Resume_8763468d.docx", "Bharath_Raj_P_Resume.docx");
-const guideUrl = assetPath("/manus-storage/Bharath_Raj_P_Software_Skills_and_Projects_Guide_521fc6d2.pdf", "Bharath_Raj_P_Software_Skills_and_Projects_Guide.pdf");
+const guideUrl = assetPath("/manus-storage/Bharath_Raj_P_Complete_Software_Learning_Book_6728f86d.pdf", "Bharath_Raj_P_Complete_Software_Learning_Book.pdf");
 
 const featuredProjects = [
   {
@@ -258,7 +258,7 @@ export default function Home() {
 
           <section id="skills" className="section-block skills-section">
             <div className="section-marker"><span>03</span><div><p>TOOLS + PRACTICE</p><p className="marker-note">The working vocabulary</p><span className="section-stamp">INDEX / 06 CAPABILITIES</span></div></div>
-              <div className="section-content"><div className="skills-intro"><h2>A stack chosen for control.</h2><p>I reach for tools that make behavior explicit: typed boundaries, inspectable state, resilient APIs, and interfaces that stay close to the user’s real workflow.</p></div><div className="skills-grid">{skillGroups.map(([name, skills]) => <div className="skill-item" key={name}><span>{name}</span><p>{skills}</p></div>)}</div><aside className="learning-guide" aria-label="Downloadable skills and projects guide"><div><span>FIELD GUIDE / 12 CHAPTERS</span><h3>Reset the basics. Rebuild with evidence.</h3><p>A beginner-friendly PDF with plain-language explanations, code examples, visual workflows, project walkthroughs, a glossary, and a 12-week rebuild plan.</p></div><a className="button-primary" href={guideUrl} download><BookOpen size={16} /> Download skill guide</a></aside></div>
+              <div className="section-content"><div className="skills-intro"><h2>A stack chosen for control.</h2><p>I reach for tools that make behavior explicit: typed boundaries, inspectable state, resilient APIs, and interfaces that stay close to the user’s real workflow.</p></div><div className="skills-grid">{skillGroups.map(([name, skills]) => <div className="skill-item" key={name}><span>{name}</span><p>{skills}</p></div>)}</div><aside className="learning-guide" aria-label="Downloadable complete software learning book"><div><span>COMPLETE BOOK / BEGINNER → ADVANCED</span><h3>Learn the basics. Build the systems. Explain the work.</h3><p>A detailed visual PDF covering every résumé skill from fundamentals through advanced practice, plus certification context, code examples, project briefs, glossary terms, and a 24-week execution plan.</p></div><a className="button-primary" href={guideUrl} download><BookOpen size={16} /> Download complete book</a></aside></div>
           </section>
 
           <section id="contact" className="contact-section">
